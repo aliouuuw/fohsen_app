@@ -29,7 +29,7 @@ export const UserProfile = ({ scrollY }: UserProfileProps) => {
     };
   });
   return (
-    <View className="relative">
+    <View>
       <View className="flex-row items-center justify-between px-4">
         <View className="flex-row items-center gap-4 mt-3">
           <Avatar className="w-[43px] h-[43px]">
@@ -55,7 +55,7 @@ export const UserProfile = ({ scrollY }: UserProfileProps) => {
       <Animated.View style={progressBarStyle} className="w-full h-2.5 bg-slate-200 mt-2">
         <Progress
           value={44}
-          className="h-2.5 w-full bg-slate-200 absolute top-0 left-0"
+          className="h-2.5 w-full bg-slate-200"
           indicatorClassName="bg-green-600"
         />
       </Animated.View>

@@ -14,7 +14,6 @@ import Animated, {
   withTiming,
 } from "react-native-reanimated";
 import { Text } from "@/components/Text";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
 
 export default function AccueilScreen() {
   const scrollY = useSharedValue(0);
@@ -46,7 +45,7 @@ export default function AccueilScreen() {
   return (
     <SafeAreaView className="flex-1 bg-[#1b1b1b]">
       {/* Safe header that respects the status bar */}
-      <SafeAreaView className="bg-[#1b1b1b] pb-4">
+      <SafeAreaView className="bg-[#1b1b1b]">
         <UserProfile scrollY={scrollY} />
       </SafeAreaView>
 

@@ -32,7 +32,7 @@ export const ProgressCard = ({ scrollY }: ProgressCardProps) => {
     <View className="px-4 mt-6 relative">
       {/* Main Card */}
       <Animated.View style={cardAnimatedStyle}>
-        <Card className="w-full h-36 bg-green-800 rounded-[15px] border-none">
+        <Card className="w-full h-36 bg-green-800 border-none">
           <CardContent className="p-4">
             <Text className="text-white text-sm font-semibold font-['Poppins'] leading-[17.5px] mb-3.5">
               Formation des Acteurs Communautaires de Santé sur le Paquet

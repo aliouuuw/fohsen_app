@@ -15,9 +15,9 @@ export function ModuleCard({ moduleNumber, title, lessons, status, currentLesson
   const getStatusColor = () => {
     switch (status) {
       case "completed":
-        return "bg-blue-600";
+        return "bg-green-600";
       case "in_progress":
-        return "bg-green-500";
+        return "bg-blue-600";
       case "upcoming":
         return "bg-zinc-300";
     }
@@ -42,19 +42,20 @@ export function ModuleCard({ moduleNumber, title, lessons, status, currentLesson
           <Text className="text-zinc-600 text-sm font-medium">{moduleNumber}</Text>
           <View className="w-7 h-7 items-center justify-center bg-gray-100 rounded-full">
             {status !== "upcoming" && (
-              <View className={`w-5 h-5 rounded-full ${status === "completed" ? "bg-blue-600" : "bg-green-500"} items-center justify-center`}>
-                <FontAwesome name="check" size={12} color="white" />
+              <View className={`w-5 h-5 rounded-full ${status === "completed" ? "bg-green-600" : "bg-blue-600"} items-center justify-center`}>
+                {status === "completed" && <FontAwesome name="check" size={12} color="white" />}
+                {status === "in_progress" && <FontAwesome name="play-circle" size={12} color="white" />}
               </View>
             )}
           </View>
         </View>
         <Text className="text-black text-base font-semibold leading-tight">{title}</Text>
         <View className="flex-row items-center gap-2 mt-1">
-          <Text className={`text-sm ${status === "in_progress" ? "text-green-950 font-medium" : "text-zinc-600 font-normal"}`}>
+          <Text className={`text-sm ${status === "in_progress" ? "text-blue-600 font-medium" : "text-zinc-600 font-normal"}`}>
             {lessons} leçons
           </Text>
           <Text className="text-zinc-400">•</Text>
-          <Text className={`text-sm ${status === "in_progress" ? "text-green-950 font-medium" : "text-zinc-600 font-normal"}`}>
+          <Text className={`text-sm ${status === "in_progress" ? "text-blue-600 font-medium" : "text-zinc-600 font-normal"}`}>
             {status === "in_progress" && currentLesson ? `${currentLesson}/${lessons}` : getStatusText()}
           </Text>
         </View>

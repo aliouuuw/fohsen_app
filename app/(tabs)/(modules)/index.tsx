@@ -11,6 +11,7 @@ import Animated, {
 import { CurrentModule } from "@/components/CurrentModule";
 import { Progress } from "@/components/ui/Progress";
 import FontAwesome from "@expo/vector-icons/build/FontAwesome";
+import { Link } from "expo-router";
 
 export default function ModulesScreen() {
   const scrollY = useSharedValue(0);
@@ -22,7 +23,6 @@ export default function ModulesScreen() {
   });
 
   const currentModule = modules.find((m) => m.status === "in_progress");
-
 
   return (
     <SafeAreaView className="flex-1 bg-[#1b1b1b]">
@@ -59,14 +59,23 @@ export default function ModulesScreen() {
               Module en cours...
             </Text>
             {currentModule && (
-              <CurrentModule
-                moduleNumber={currentModule.moduleNumber}
-                title={currentModule.title}
-                currentLesson={currentModule.currentLesson || 1}
-                totalLessons={currentModule.lessons}
-                duration={currentModule.duration}
-                progress={75} // This should be calculated based on current lesson
-              />
+              <Link
+                href={{
+                  pathname: "/modules/[id]",
+                  params: { id: currentModule.id }
+                }}
+                asChild
+              >
+                <CurrentModule
+                  id={currentModule.id}
+                  moduleNumber={currentModule.moduleNumber}
+                  title={currentModule.title}
+                  currentLesson={currentModule.currentLesson || 1}
+                  totalLessons={currentModule.lessons}
+                  duration={currentModule.duration}
+                  progress={75} // This should be calculated based on current lesson
+                />
+              </Link>
             )}
           </View>
 

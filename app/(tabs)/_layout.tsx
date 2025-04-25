@@ -8,9 +8,6 @@ export default function TabLayout() {
         tabBarBackground: () => null,
         headerShown: false,
         tabBarActiveTintColor: "#000000",
-        tabBarStyle: {
-          paddingTop: 10,
-        },
       }}
       initialRouteName="index"
     >
@@ -24,7 +21,7 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="(modules)/modules"
+        name="(modules)"
         options={{
           title: "Modules",
           tabBarIcon: ({ color }) => (
@@ -38,6 +35,15 @@ export default function TabLayout() {
           title: "Discussion",
           tabBarIcon: ({ color }) => (
             <FontAwesome size={28} name="comment" color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="profile"
+        options={{
+          title: "Profil",
+          tabBarIcon: ({ color }) => (
+            <FontAwesome size={28} name="user" color={color} />
           ),
         }}
       />

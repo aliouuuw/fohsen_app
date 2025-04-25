@@ -7,7 +7,7 @@ export interface CardProps {
 }
 
 export const Card = ({ children, className }: CardProps) => (
-  <View className={`bg-white rounded-[5px] shadow ${className}`}>
+  <View className={`rounded-[5px] shadow ${className}`}>
     {children}
   </View>
 );
